@@ -1,4 +1,5 @@
 import pyxel
+from pyxel import btnp
 
 WIDTH = 200
 HEIGHT = 200
@@ -6,7 +7,9 @@ pyxel.init(WIDTH, HEIGHT)
 x = 0
 
 def update():
-    x += 5
+    global x
+    if btnp(pyxel.KEY_RIGHT):
+        x += 5
     if x > WIDTH:
         x = -20
 
